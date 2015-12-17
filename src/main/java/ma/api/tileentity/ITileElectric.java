@@ -14,20 +14,18 @@ public interface ITileElectric
 	 * 
 	 * @param	dir		direction on connect
 	 * @return	can connect
-	 * 
-	 * @author	licht
 	 */
-	public boolean isConnect (ForgeDirection dir);
+	boolean isConnect (ForgeDirection dir);
 	
-	public boolean isRequestMAEU ();
+	boolean isRequestMAEU ();
 	
-	public long getChargeMAEU ();
+	long getChargeMAEU ();
 	
-	public long getMaxChargeMAEU ();
+	long getMaxChargeMAEU ();
 	
-	public void connectMAEU (ITileElectric comparison);
+	void connectMAEU (ITileElectric comparison);
 	
-	public long chargeMAEU (long charge);
+	long chargeMAEU (long charge);
 	
-	public long drainMAEU (long request);
+	long drainMAEU (long request);
 }

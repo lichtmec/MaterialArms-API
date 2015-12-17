@@ -4,11 +4,11 @@ import net.minecraft.item.*;
 
 public interface IRecipeEnchantment
 {
-	public boolean enchantableOnly ();
+	boolean enchantableOnly ();
 	
-	public boolean isMatch (ItemStack target, ItemStack[] inputStack);
+	boolean isMatch (ItemStack target, ItemStack[] inputStack);
 	
-	public Object[] getResources ();
+	Object[] getResources ();
 	
-	public ItemStack getOutput (ItemStack target, ItemStack[] inputStack);
+	ItemStack getOutput (ItemStack target, ItemStack[] inputStack);
 }

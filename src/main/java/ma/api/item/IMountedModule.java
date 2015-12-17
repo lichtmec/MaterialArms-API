@@ -10,16 +10,16 @@ import net.minecraftforge.event.entity.living.*;
 
 public interface IMountedModule
 {
-	public long getEnergyCapacity (NBTTagCompound moduleData, EntityPlayer player, ItemStack armorStack);
+	long getEnergyCapacity (NBTTagCompound moduleData, EntityPlayer player, ItemStack armorStack);
 	
-	public void onArmorTick (NBTTagCompound moduleData, EntityPlayer player, ItemStack armorStack);
+	void onArmorTick (NBTTagCompound moduleData, EntityPlayer player, ItemStack armorStack);
 	
 	@SideOnly(Side.CLIENT)
-	public void renderHelmetOverlay(NBTTagCompound moduleData, EntityPlayer player, ItemStack armorStack, ScaledResolution resolution, float partialTicks, boolean hasScreen, int mouseX, int mouseY);
+	void renderHelmetOverlay(NBTTagCompound moduleData, EntityPlayer player, ItemStack armorStack, ScaledResolution resolution, float partialTicks, boolean hasScreen, int mouseX, int mouseY);
 	
-	public void onLivingAttacked (NBTTagCompound moduleData, LivingAttackEvent event, ItemStack armorStack);
+	void onLivingAttacked (NBTTagCompound moduleData, LivingAttackEvent event, ItemStack armorStack);
 	
-	public void onLivingFall (NBTTagCompound moduleData, LivingFallEvent event, ItemStack armorStack);
+	void onLivingFall (NBTTagCompound moduleData, LivingFallEvent event, ItemStack armorStack);
 	
-	public void onLivingHurt (NBTTagCompound moduleData, LivingHurtEvent event, ItemStack armorStack);
+	void onLivingHurt (NBTTagCompound moduleData, LivingHurtEvent event, ItemStack armorStack);
 }

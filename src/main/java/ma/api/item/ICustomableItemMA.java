@@ -4,7 +4,7 @@ import net.minecraft.item.*;
 
 public interface ICustomableItemMA
 {
-	public boolean isProvideConformInfo_Customize (ItemStack stack);
+	boolean isProvideConformInfo_Customize (ItemStack stack);
 	
-	public boolean isConform_Customize (ItemStack stack, ModConform modInfo, ItemStack[] input);
+	boolean isConform_Customize (ItemStack stack, ModConform modInfo, ItemStack[] input);
 }

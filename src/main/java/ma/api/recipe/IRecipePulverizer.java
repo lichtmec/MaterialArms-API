@@ -4,22 +4,22 @@ import net.minecraft.item.ItemStack;
 
 public interface IRecipePulverizer
 {
-	public static final byte modeGrinder = 1;
-	public static final byte modeCrushmill = 2;
+	byte modeGrinder = 1;
+	byte modeCrushmill = 2;
 	
-	public boolean canPulverize (ItemStack input, int tier, int pulverizer);
+	boolean canPulverize (ItemStack input, int tier, int pulverizer);
 	
-	public int getPulverizerMode ();
+	int getPulverizerMode ();
 	
-	public int getRequiredTier ();
+	int getRequiredTier ();
 	
-	public Object getResource ();
+	Object getResource ();
 	
-	public ItemStack getMainOutput ();
+	ItemStack getMainOutput ();
 	
-	public ItemStack getSubOutput ();
+	ItemStack getSubOutput ();
 	
-	public float getSubOutputChance ();
+	float getSubOutputChance ();
 	
-	public int getTimeRequired (ItemStack input, int pulverizer);
+	int getTimeRequired (ItemStack input, int pulverizer);
 }

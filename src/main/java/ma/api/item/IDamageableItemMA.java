@@ -4,11 +4,11 @@ import net.minecraft.item.*;
 
 public interface IDamageableItemMA
 {
-	public long getBaseConsumeDurability (ItemStack stack);
+	long getBaseConsumeDurability (ItemStack stack);
 	
-	public boolean setItemDamage_ma (ItemStack stack, long damage);
+	boolean setItemDamage_ma (ItemStack stack, long damage);
 	
-	public long getItemDamage_ma (ItemStack stack);
+	long getItemDamage_ma (ItemStack stack);
 	
-	public long getMaxDurability (ItemStack stack);
+	long getMaxDurability (ItemStack stack);
 }

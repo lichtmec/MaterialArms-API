@@ -29,14 +29,14 @@ public class MATileCommonProcess
 		commonProcess.releaseHeatToAir(tile);
 	}
 	
-	public static interface ITileCommonProcess
+	public interface ITileCommonProcess
 	{
-		public float HEAT_CONDUCTION_RATE_AIR = 0.1F;
+		float HEAT_CONDUCTION_RATE_AIR = 0.1F;
 		
-		public void onUpdateContainer (ISMatContainer tile);
+		void onUpdateContainer (ISMatContainer tile);
 		
-		public void releaseHeatToBlock (ITileHeatable tile);
+		void releaseHeatToBlock (ITileHeatable tile);
 		
-		public void releaseHeatToAir (ITileHeatable tile);
+		void releaseHeatToAir (ITileHeatable tile);
 	}
 }

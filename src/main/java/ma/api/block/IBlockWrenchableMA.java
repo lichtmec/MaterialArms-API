@@ -23,8 +23,6 @@ public interface IBlockWrenchableMA
 	 * @param 	side		clicked surface
 	 * 
 	 * @return	is consume durability
-	 * 
-	 * @author	licht
 	 */
-	public boolean onWrenchClick (ItemStack stack, EntityPlayer player, World world, int x, int y, int z, int side);
+	boolean onWrenchClick (ItemStack stack, EntityPlayer player, World world, int x, int y, int z, int side);
 }

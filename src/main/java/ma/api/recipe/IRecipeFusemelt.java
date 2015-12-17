@@ -8,15 +8,15 @@ import ma.common.smaterial.*;
 
 public interface IRecipeFusemelt
 {
-	public boolean isMatches (ItemStack[] stacks);
+	boolean isMatches (ItemStack[] stacks);
 	
-	public boolean canStart (ItemStack[] stacks, int temp);
+	boolean canStart (ItemStack[] stacks, int temp);
 	
-	public List getResources ();
+	List getResources ();
 	
-	public SMatStack getResult ();
+	SMatStack getResult ();
 	
-	public int getRunTemp ();
+	int getRunTemp ();
 	
-	public int getRunTime ();
+	int getRunTime ();
 }

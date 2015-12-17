@@ -4,5 +4,5 @@ import ma.api.recipe.IRecipeCustomize;
 
 public interface ICustomResourceTransformer
 {
-	public Object[] transform (IRecipeCustomize recipe);
+	Object[] transform (IRecipeCustomize recipe);
 }

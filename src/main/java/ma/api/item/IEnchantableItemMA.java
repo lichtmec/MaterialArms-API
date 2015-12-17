@@ -4,11 +4,11 @@ import net.minecraft.item.*;
 
 public interface IEnchantableItemMA
 {
-	public int getRuneCapacity (ItemStack stack);
+	int getRuneCapacity (ItemStack stack);
 	
-	public int getManaCapacity (ItemStack stack);
+	int getManaCapacity (ItemStack stack);
 	
-	public boolean isProvideConformInfo_Enchantment (ItemStack stack);
+	boolean isProvideConformInfo_Enchantment (ItemStack stack);
 	
-	public boolean isConform_Enchantment (ItemStack stack, ModConform modInfo, ItemStack[] input);
+	boolean isConform_Enchantment (ItemStack stack, ModConform modInfo, ItemStack[] input);
 }

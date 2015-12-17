@@ -21,8 +21,6 @@ public interface IDebugInfo
 	 * @param	x		x
 	 * @param	y		y
 	 * @param	z		z
-	 * 
-	 * @author	licht
 	 */
-	public void onAccessedTester (List info, byte type, Object me, int x, int y, int z);
+	void onAccessedTester (List info, byte type, Object me, int x, int y, int z);
 }

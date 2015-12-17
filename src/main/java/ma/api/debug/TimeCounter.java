@@ -11,8 +11,6 @@ public class TimeCounter
 	
 	/**
 	 * Store the measurement start time.
-	 * 
-	 * @author	licht
 	 */
 	public static void startTimer ()
 	{
@@ -23,8 +21,6 @@ public class TimeCounter
 	 * Get the difference between the measurement start time.
 	 * 
 	 * @return	measuring result
-	 * 
-	 * @author	licht
 	 */
 	public static long getLapseTime ()
 	{

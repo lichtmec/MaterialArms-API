@@ -12,17 +12,17 @@ import ma.common.recipe.Technology.UnderlyingTechnology;
 
 public interface IRecipeMA
 {
-	public boolean matches (InventoryCrafting craftMatrix, World world);
+	boolean matches (InventoryCrafting craftMatrix, World world);
 	
-	public ItemStack getCraftingResult (InventoryCrafting craftMatrix, ItemStack memory);
+	ItemStack getCraftingResult (InventoryCrafting craftMatrix, ItemStack memory);
 	
-	public int getRecipeSize ();
+	int getRecipeSize ();
+
+	ItemStack getRecipeOutput ();
 	
-	public ItemStack getRecipeOutput ();
+	Object[] getResources ();
 	
-	public Object[] getResources ();
+	UnderlyingTechnology[] getUTList ();
 	
-	public UnderlyingTechnology[] getUTList ();
-	
-	public ICraftItemGenHandler getHandler ();
+	ICraftItemGenHandler getHandler ();
 }

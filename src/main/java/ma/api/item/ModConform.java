@@ -12,17 +12,20 @@ public class ModConform
 		this.targetItemClass = targetItemClass;
 		this.modName = modName;
 	}
-	
+
+	@SuppressWarnings("unused")
 	public boolean isConform (String modName)
 	{
 		return this.modName.equals(modName);
 	}
-	
+
+	@SuppressWarnings("unused")
 	public boolean isConform (String targetItemClass, String modName)
 	{
 		return this.targetItemClass.equals(targetItemClass) && isConform(modName);
 	}
-	
+
+	@SuppressWarnings("unused")
 	public boolean isConform (String modClass, String targetItemClass, String modName)
 	{
 		return this.modClass.equals(modClass) && isConform(targetItemClass, modName);

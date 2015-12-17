@@ -23,8 +23,6 @@ public interface IBlockDrivableMA
 	 * @param 	side		clicked surface
 	 * 
 	 * @return	is consume durability
-	 * 
-	 * @author	licht
 	 */
-	public boolean onScrewdriverClick (ItemStack stack, EntityPlayer player, World world, int x, int y, int z, int side);
+	boolean onScrewdriverClick (ItemStack stack, EntityPlayer player, World world, int x, int y, int z, int side);
 }

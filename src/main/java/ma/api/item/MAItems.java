@@ -13,8 +13,6 @@ public final class MAItems
 	 * @param itemName	Name of Item or Block
 	 * @param metadata	Item metadata
 	 * @return			Result stack
-	 * 
-	 * @author licht
 	 */
 	public static ItemStack getItem (String itemName, int metadata)
 	{

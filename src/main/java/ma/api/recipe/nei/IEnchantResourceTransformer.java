@@ -4,5 +4,5 @@ import ma.api.recipe.IRecipeEnchantment;
 
 public interface IEnchantResourceTransformer
 {
-	public Object[] transform (IRecipeEnchantment recipe);
+	Object[] transform (IRecipeEnchantment recipe);
 }

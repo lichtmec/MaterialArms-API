@@ -2,11 +2,11 @@ package ma.api.tileentity;
 
 public interface ITileDamageable
 {
-	public boolean addDamage (long damage);
+	boolean addDamage (long damage);
 	
-	public void setDurability (long durability);
+	void setDurability (long durability);
 	
-	public long getDurability ();
+	long getDurability ();
 	
-	public long getMaxDurability ();
+	long getMaxDurability ();
 }

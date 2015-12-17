@@ -2,6 +2,7 @@ package ma.api.item;
 
 public interface IModifiProperty
 {
+	@SuppressWarnings("all")
 	public static class ResistProperty
 	{
 		public float raito;

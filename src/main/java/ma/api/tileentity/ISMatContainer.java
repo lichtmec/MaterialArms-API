@@ -6,27 +6,27 @@ import ma.common.smaterial.*;
 
 public interface ISMatContainer
 {
-	public SMatStack getMaterialContainer (int container);
+	SMatStack getMaterialContainer (int container);
 	
-	public int getMaterialAmout (int container);
+	int getMaterialAmout (int container);
 	
-	public int getMaterialContainerSize ();
+	int getMaterialContainerSize ();
 	
-	public int getMaterialContainerCapacity (int container);
+	int getMaterialContainerCapacity (int container);
 	
-	public SMatContainerInfo getMaterialContainerInfo (int container);
+	SMatContainerInfo getMaterialContainerInfo (int container);
 	
-	public int fillMaterial (ForgeDirection dir, SMatStack smat);
+	int fillMaterial (ForgeDirection dir, SMatStack smat);
 	
-	public boolean canFillMaterial (ForgeDirection dir, SMatStack smat);
+	boolean canFillMaterial (ForgeDirection dir, SMatStack smat);
 	
-	public SMatStack drainMaterial (ForgeDirection dir, int maxDrain);
+	SMatStack drainMaterial (ForgeDirection dir, int maxDrain);
 	
-	public SMatStack drainMaterial (ForgeDirection dir, int maxDrain, int container);
+	SMatStack drainMaterial (ForgeDirection dir, int maxDrain, int container);
 	
-	public boolean canDrainMaterial (ForgeDirection dir, SMatStack smat);
+	boolean canDrainMaterial (ForgeDirection dir, SMatStack smat);
 	
-	public static class SMatContainerInfo
+	class SMatContainerInfo
 	{
 		public SMatStack smat;
 		public int capacity;
