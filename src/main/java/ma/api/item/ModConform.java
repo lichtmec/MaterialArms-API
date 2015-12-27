@@ -1,5 +1,15 @@
 package ma.api.item;
 
+/**
+ * Container-class for tool modification info.<br>
+ * <br>
+ * <b>Parameters</b><br>
+ * modClass -> modification type ... ex) custom, enchant<br>
+ * targetItemClass -> target tool type ... ex) tool, armor<br>
+ * modName -> modification name ... ex) shapeness, reinforce
+ *
+ * @author	licht
+ */
 public class ModConform
 {
 	public final String modClass;

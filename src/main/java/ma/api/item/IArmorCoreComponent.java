@@ -17,6 +17,8 @@ public interface IArmorCoreComponent
 	boolean isArmorCoreComponent (ItemStack stack);
 	
 	/**
+	 * Armor-Tier for attaching this.
+	 *
 	 * @param	stack	component stack
 	 * 
 	 * @return	require tier
@@ -33,6 +35,9 @@ public interface IArmorCoreComponent
 	int[] getNeedTools (ItemStack target, ItemStack stack);
 	
 	/**
+	 * Ataching process<br>
+	 * Called by Tile-CoreBuilder when build core.
+	 *
 	 * @param	target	core stack
 	 * @param	stack	component stack
 	 * 

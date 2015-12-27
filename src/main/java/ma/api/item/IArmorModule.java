@@ -40,6 +40,9 @@ public interface IArmorModule
 	int[] getNeedTools (ItemStack target, ItemStack stack);
 	
 	/**
+	 * Ataching process<br>
+	 * Called by Tile-ArmorBuilder when build armor.
+	 *
 	 * @param	target	armor stack
 	 * @param	stack	module stack
 	 */
