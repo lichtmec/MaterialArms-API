@@ -2,9 +2,8 @@ package ma.api.recipe;
 
 import java.util.*;
 
+import ma.api.smaterial.SMatStack;
 import net.minecraft.item.*;
-
-import ma.common.smaterial.*;
 
 public interface IRecipeFusemelt
 {

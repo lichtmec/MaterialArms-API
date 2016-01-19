@@ -1,8 +1,7 @@
 package ma.api.tileentity;
 
+import ma.api.smaterial.SMatStack;
 import net.minecraftforge.common.util.ForgeDirection;
-
-import ma.common.smaterial.*;
 
 public interface ISMatContainer
 {

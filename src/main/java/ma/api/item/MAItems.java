@@ -5,7 +5,7 @@ import net.minecraft.item.*;
 
 public final class MAItems
 {
-	public static Class<?> maItems;
+	private static Class<?> maItems;
 	
 	/**
 	 * Get itemstack from MaterialArms

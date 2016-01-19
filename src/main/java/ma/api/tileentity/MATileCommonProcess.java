@@ -4,7 +4,7 @@ import net.minecraft.tileentity.TileEntity;
 
 public class MATileCommonProcess
 {
-	public static ITileCommonProcess commonProcess;
+	private static ITileCommonProcess commonProcess;
 	
 	public static void doAllProcess (TileEntity tile)
 	{
