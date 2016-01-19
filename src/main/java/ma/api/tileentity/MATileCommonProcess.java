@@ -1,5 +1,6 @@
 package ma.api.tileentity;
 
+import ma.api.smaterial.ISMatContainer;
 import net.minecraft.tileentity.TileEntity;
 
 public class MATileCommonProcess

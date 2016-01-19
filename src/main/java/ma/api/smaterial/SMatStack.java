@@ -14,17 +14,17 @@ public final class SMatStack
 	public float compression;
 	public NBTTagCompound nbt, nbt_ex;
 	
-	public SMatStack (SMaterial fluid, int amout)
+	public SMatStack (SMaterial fluid, int amount)
 	{
-		this(fluid, amout, fluid.getDefaultTemp());
+		this(fluid, amount, fluid.getDefaultTemp());
 	}
 	
-	public SMatStack (SMaterial material, int amout, int temp)
+	public SMatStack (SMaterial material, int amount, int temp)
 	{
-		this(material, amout, temp, 1F);
+		this(material, amount, temp, 1F);
 	}
 
-	public SMatStack (SMaterial material, int amout, int temp, float compression)
+	public SMatStack (SMaterial material, int amount, int temp, float compression)
 	{
 		this.material = material;
 		this.amount = amount;
@@ -32,9 +32,9 @@ public final class SMatStack
 		this.compression = compression;
 	}
 	
-	public SMatStack (SMaterial material, int amout, NBTTagCompound nbt)
+	public SMatStack (SMaterial material, int amount, NBTTagCompound nbt)
 	{
-		this(material, amout);
+		this(material, amount);
 		
 		if (this.nbt != null)
 		{
@@ -42,9 +42,9 @@ public final class SMatStack
 		}
 	}
 	
-	public SMatStack (SMaterial material, int amout, NBTTagCompound nbt, int temp)
+	public SMatStack (SMaterial material, int amount, NBTTagCompound nbt, int temp)
 	{
-		this(material, amout, temp);
+		this(material, amount, temp);
 		
 		if (this.nbt != null)
 		{
