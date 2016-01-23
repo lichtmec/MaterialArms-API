@@ -38,9 +38,33 @@ public final class MAItems
 		
 		return null;
 	}
-	
+
 	public static Class<?> getItemClass ()
 	{
 		return maItems;
 	}
 }
+
+/*
+ * MaterialArms Item List
+ *
+ * 	Blocks
+ * 	  blockOre
+ * 	  blockMetal
+ * 	  blockWorkstation		- MAWorkbench, SmallSmelter, etc
+ * 	  blockStorage			- Storages
+ * 	  blockEUStorage		- EUStorage, RSGenerator
+ * 	  blockMachine			- Many machines
+ *
+ * 	Items
+ * 	  itemTester			- Debug item
+ * 	  researchMemory
+ * 	  implementTools
+ * 	  itemTool
+ * 	  itemArmorHelmet
+ * 	  itemArmorBodyarmor
+ * 	  itemArmorLeggings
+ * 	  itemArmorBoots
+ * 	  itemMetal				- Material items
+ * 	  itemFC				- Factory components
+ */
