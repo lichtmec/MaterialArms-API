@@ -1,14 +1,10 @@
 package ma.api.recipe;
 
-import java.util.*;
-
 import net.minecraft.inventory.*;
 import net.minecraft.item.*;
 import net.minecraft.world.*;
 
-import ma.api.*;
-import ma.common.recipe.*;
-import ma.common.recipe.Technology.UnderlyingTechnology;
+import ma.api.recipe.Technology.UnderlyingTechnology;
 
 public interface IRecipeMA
 {
