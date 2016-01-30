@@ -7,5 +7,5 @@ package ma.api;
  */
 public class MaterialArmsAPI
 {
-	public static final String API_VER = "0.8";
+	public static final String API_VER = "0.9.0";
 }

@@ -50,31 +50,26 @@ public class EResultContainer
 		this.critVote = 0;
 	}
 
-	@SuppressWarnings("unused")
 	public void setCanceled (boolean isCanceled)
 	{
 		this.canceled = isCanceled;
 	}
 
-	@SuppressWarnings("unused")
 	public boolean isEnoughMana (int request)
 	{
 		return (this.containsMana - (this.consumeMana + request) >= 0);
 	}
 
-	@SuppressWarnings("unused")
 	public void addManaConsume (int consume)
 	{
 		this.consumeMana += consume;
 	}
 
-	@SuppressWarnings("unused")
 	public void gainManaConsume (float gain)
 	{
 		this.consumeMana *= gain;
 	}
 
-	@SuppressWarnings("unused")
 	public EResultContainer setBreaking (int cons)
 	{
 		this.consumeDurability += cons;
@@ -82,7 +77,6 @@ public class EResultContainer
 		return this;
 	}
 
-	@SuppressWarnings("unused")
 	public EResultContainer setDurabilityConsume (int boost, float gain)
 	{
 		this.consumeDurabilityBoost = boost;
@@ -91,7 +85,6 @@ public class EResultContainer
 		return this;
 	}
 
-	@SuppressWarnings("unused")
 	public EResultContainer setAttackDamage (float boost, float gain)
 	{
 		this.attackDamageBoost = boost;
@@ -100,31 +93,26 @@ public class EResultContainer
 		return this;
 	}
 
-	@SuppressWarnings("unused")
 	public void addAttackDamageBoost (float boost)
 	{
 		this.attackDamageBoost += boost;
 	}
 
-	@SuppressWarnings("unused")
 	public void gainAttackDamageBoost (float gain)
 	{
 		this.attackDamageBoost *= gain;
 	}
 
-	@SuppressWarnings("unused")
 	public void addAttackDamageGain (float boost)
 	{
 		this.attackDamageGain += boost;
 	}
 
-	@SuppressWarnings("unused")
 	public void gainAttackDamageGain (float gain)
 	{
 		this.attackDamageGain *= gain;
 	}
 
-	@SuppressWarnings("unused")
 	public EResultContainer setDigSpeed (float boost, float gain)
 	{
 		this.digSpeedBoost = boost;
@@ -133,31 +121,26 @@ public class EResultContainer
 		return this;
 	}
 
-	@SuppressWarnings("unused")
 	public void addDigSpeedBoost (float boost)
 	{
 		this.digSpeedBoost += boost;
 	}
 
-	@SuppressWarnings("unused")
 	public void gainDigSpeedBoost (float gain)
 	{
 		this.digSpeedBoost *= gain;
 	}
 
-	@SuppressWarnings("unused")
 	public void addDigSpeedGain (float boost)
 	{
 		this.digSpeedGain += boost;
 	}
 
-	@SuppressWarnings("unused")
 	public void gainDigSpeedGain (float gain)
 	{
 		this.digSpeedGain *= gain;
 	}
 
-	@SuppressWarnings("unused")
 	public EResultContainer voteCritical (boolean isCrit)
 	{
 		this.critVote += isCrit ? 1 : -1;
