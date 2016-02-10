@@ -171,6 +171,7 @@ public class SMaterial
 	public enum States
 	{
 		SOLID(false),
+		DUST(true),
 		LIQUID(true),
 		GAS(true),
 		PLASMA(true),
