@@ -4,13 +4,20 @@ public final class RecipeRegsiterAccess
 {
 	private static IRecipeRegister register;
 
-	public static void addShapedRecipe (IRecipeMA recipe)
+	public static void addMARecipe (IRecipeMA recipe)
 	{
-		register.addShapedRecipe(recipe);
+		register.addMARecipe(recipe);
+	}
+
+	public static void registerRechUnlocker (ITechUnlockable unlocker)
+	{
+		register.registerTechUnlocker(unlocker);
 	}
 
 	public interface IRecipeRegister
 	{
-		void addShapedRecipe (IRecipeMA recipe);
+		void addMARecipe (IRecipeMA recipe);
+
+		void registerTechUnlocker (ITechUnlockable unlocker);
 	}
 }

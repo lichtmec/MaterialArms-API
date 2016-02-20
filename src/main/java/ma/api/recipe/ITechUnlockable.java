@@ -1,5 +1,7 @@
 package ma.api.recipe;
 
+import ma.api.recipe.Technology.UnderlyingTechnology;
+
 /**
  * Information about U.Technology unlock.
  * It is assumed to be implemented with IRecipeMA.
@@ -24,4 +26,9 @@ public interface ITechUnlockable
 	 * @return	true(secret) or false(not secret)
 	 */
 	boolean isSecret ();
+
+	/**
+	 * @return	Array of unlockables
+	 */
+	UnderlyingTechnology[] getUnlockableList ();
 }

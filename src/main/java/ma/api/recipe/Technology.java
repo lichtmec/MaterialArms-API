@@ -46,5 +46,21 @@ public final class Technology
 		{
 			return this.level;
 		}
+
+		@Override
+		public boolean equals (Object obj)
+		{
+			if (obj instanceof UnderlyingTechnology)
+			{
+				UnderlyingTechnology checkObj = (UnderlyingTechnology)obj;
+
+				if (tech.getName().equals(checkObj.getTechName()) && getTechLevel() == checkObj.getTechLevel())
+				{
+					return true;
+				}
+			}
+
+			return false;
+		}
 	}
 }
