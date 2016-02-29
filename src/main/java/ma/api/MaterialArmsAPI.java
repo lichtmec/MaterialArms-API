@@ -5,7 +5,14 @@ package ma.api;
  * 
  * @author	licht
  */
-public class MaterialArmsAPI
+public final class MaterialArmsAPI
 {
-	public static final String API_VER = "0.9.0";
+	public static final String API_VER = "0.9.1";
+
+	private static Boolean initialized = Boolean.FALSE;
+
+	public static boolean isInitialized ()
+	{
+		return initialized;
+	}
 }

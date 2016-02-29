@@ -26,7 +26,7 @@ public final class Technology
 		return this.maxLevel;
 	}
 
-	public static final class UnderlyingTechnology
+	public static final class UnderlyingTechnology implements Cloneable
 	{
 		public Technology tech;
 		public short level;
@@ -47,6 +47,13 @@ public final class Technology
 			return this.level;
 		}
 
+		public UnderlyingTechnology setTechLevel (short level)
+		{
+			this.level = level;
+
+			return this;
+		}
+
 		@Override
 		public boolean equals (Object obj)
 		{
@@ -61,6 +68,12 @@ public final class Technology
 			}
 
 			return false;
+		}
+
+		@Override
+		public UnderlyingTechnology clone ()
+		{
+			return new UnderlyingTechnology(this.tech, this.level);
 		}
 	}
 }
