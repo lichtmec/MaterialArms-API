@@ -1,14 +1,71 @@
 package ma.api.smaterial;
 
+import net.minecraft.item.ItemStack;
+
+/**
+ * SMaterial-container interface for Item.
+ *
+ * @author	licht
+ */
 public interface ISMatContainerItem
 {
-	void fillMaterial (SMatStack smat);
+	/**
+	 * Fill material to container.
+	 *
+	 * @param stack	Container item
+	 * @param smat	Material that is poured
+	 *
+	 * @return		Amount of overflow
+	 */
+	int fillMaterial (ItemStack stack, SMatStack smat);
 
-	boolean canFillMaterial (SMatStack smat);
+	/**
+	 * Check whether it is possible to pour the material.
+	 *
+	 * @param stack	Container item
+	 * @param smat	Material that is poured
+	 *
+	 * @return		true(can) or false(can't)
+	 */
+	boolean canFillMaterial (ItemStack stack, SMatStack smat);
 
-	SMatStack drainMaterial (int maxDrain);
+	/**
+	 * Drain material from container.
+	 *
+	 * @param stack		Container item
+	 * @param maxDrain	Request amount
+	 *
+	 * @return			Pumped out material
+	 */
+	SMatStack drainMaterial (ItemStack stack, int maxDrain);
 
-	SMatStack drainMaterial (int maxDrain, int container);
+	/**
+	 * Drain material from container.
+	 * It is possible to specify the draft to container ID.
+	 *
+	 * @param stack		Container item
+	 * @param maxDrain	Request amount
+	 * @param container	Container ID
+	 *
+	 * @return			Pumped out material
+	 */
+	SMatStack drainMaterial (ItemStack stack, int maxDrain, int container);
 
-	boolean canDrainMaterial (SMatStack smat);
+	/**
+	 * Check whether it is possible sucked out from the container.
+	 *
+	 * @param stack	Container item
+	 *
+	 * @return		true(can) or false(can't)
+	 */
+	boolean canDrainMaterial (ItemStack stack);
+
+	/**
+	 * Check whether it is possible sucked out from the specified container.
+	 *
+	 * @param stack	Container item
+	 *
+	 * @return		true(can) or false(can't)
+	 */
+	boolean canDrainMaterial (ItemStack stack, int container);
 }

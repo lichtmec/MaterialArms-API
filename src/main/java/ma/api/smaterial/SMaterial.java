@@ -7,6 +7,11 @@ import net.minecraft.tileentity.*;
 import net.minecraft.util.StatCollector;
 import net.minecraftforge.fluids.*;
 
+/**
+ * Define of SMaterial.
+ *
+ * @author	licht
+ */
 public class SMaterial
 {
 	String name;
@@ -37,7 +42,10 @@ public class SMaterial
 	public void onInit ()
 	{
 	}
-	
+
+	/**
+	 * @return	Material name, used by registered name
+	 */
 	public String getMaterialName ()
 	{
 		return name;
@@ -120,7 +128,8 @@ public class SMaterial
 	public void writeToNBT (NBTTagCompound nbt, SMatStack smat)
 	{
 	}
-	
+
+	@Deprecated
 	public FluidStack[] toForgeFluid (SMatStack smat)
 	{
 		return null;

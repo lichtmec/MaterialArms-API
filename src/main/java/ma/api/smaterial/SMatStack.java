@@ -6,6 +6,11 @@ import net.minecraft.nbt.*;
 
 import javax.swing.text.StyleContext;
 
+/**
+ * @see net.minecraft.item.ItemStack
+ *
+ * @author	licht
+ */
 public final class SMatStack
 {
 	public SMaterial material;
