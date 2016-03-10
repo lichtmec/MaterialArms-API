@@ -33,8 +33,18 @@ public final class Technology
 
 		public UnderlyingTechnology (Technology tech, short level)
 		{
+			if (tech == null)
+			{
+				throw new NullPointerException("Null-Technology");
+			}
+
 			this.tech = tech;
 			this.level = level;
+		}
+
+		public UnderlyingTechnology (String techRegisterKey, short level)
+		{
+			this(UTechRegisterAccess.getTechnology(techRegisterKey), level);
 		}
 
 		public String getTechName ()
