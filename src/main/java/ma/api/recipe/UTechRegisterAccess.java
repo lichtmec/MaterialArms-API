@@ -1,6 +1,6 @@
 package ma.api.recipe;
 
-public class UTechRegisterAccess
+public final class UTechRegisterAccess
 {
 	private static IUTechRegister register;
 

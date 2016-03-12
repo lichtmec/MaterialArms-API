@@ -42,9 +42,14 @@ public final class Technology
 			this.level = level;
 		}
 
-		public UnderlyingTechnology (String techRegisterKey, short level)
+		public static UnderlyingTechnology create (String techRegisterKey, int level)
 		{
-			this(UTechRegisterAccess.getTechnology(techRegisterKey), level);
+			if (level > Short.MAX_VALUE)
+			{
+				throw new IllegalArgumentException("Too high a tech-level");
+			}
+
+			return new UnderlyingTechnology(UTechRegisterAccess.getTechnology(techRegisterKey), (short)level);
 		}
 
 		public String getTechName ()
