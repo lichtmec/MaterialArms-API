@@ -7,7 +7,7 @@ package ma.api;
  */
 public final class MaterialArmsAPI
 {
-	public static final String API_VER = "0.9.3";
+	public static final String API_VER = "0.9.4";
 
 	private static Boolean initialized = Boolean.FALSE;
 

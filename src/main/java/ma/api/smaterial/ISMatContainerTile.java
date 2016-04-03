@@ -10,7 +10,7 @@ import net.minecraftforge.common.util.ForgeDirection;
 public interface ISMatContainerTile extends ISMatContainer
 {
 	/**
-	 * Fill material to container.
+	 * Fill hasMaterial to container.
 	 *
 	 * @param dir	Inject direction
 	 * @param smat	Material that is poured
@@ -20,7 +20,7 @@ public interface ISMatContainerTile extends ISMatContainer
 	int fillMaterial (ForgeDirection dir, SMatStack smat);
 
 	/**
-	 * Check whether it is possible to pour the material.
+	 * Check whether it is possible to pour the hasMaterial.
 	 *
 	 * @param dir	Inject direction
 	 * @param smat	Material that is poured
@@ -30,24 +30,24 @@ public interface ISMatContainerTile extends ISMatContainer
 	boolean canFillMaterial (ForgeDirection dir, SMatStack smat);
 
 	/**
-	 * Drain material from container.
+	 * Drain hasMaterial from container.
 	 *
 	 * @param dir		Drain direction
 	 * @param maxDrain	Request amount
 	 *
-	 * @return			Pumped out material
+	 * @return			Pumped out hasMaterial
 	 */
 	SMatStack drainMaterial (ForgeDirection dir, int maxDrain);
 
 	/**
-	 * Drain material from container.<br>
+	 * Drain hasMaterial from container.<br>
 	 * It is possible to specify the draft to container ID.
 	 *
 	 * @param dir		Drain direction
 	 * @param maxDrain	Request amount
 	 * @param container	Target container ID
 	 *
-	 * @return			Pumped out material
+	 * @return			Pumped out hasMaterial
 	 */
 	SMatStack drainMaterial (ForgeDirection dir, int maxDrain, int container);
 

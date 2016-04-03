@@ -10,7 +10,7 @@ import net.minecraft.item.ItemStack;
 public interface ISMatContainerItem
 {
 	/**
-	 * Fill material to container.
+	 * Fill hasMaterial to container.
 	 *
 	 * @param stack	Container item
 	 * @param smat	Material that is poured
@@ -20,7 +20,7 @@ public interface ISMatContainerItem
 	int fillMaterial (ItemStack stack, SMatStack smat);
 
 	/**
-	 * Check whether it is possible to pour the material.
+	 * Check whether it is possible to pour the hasMaterial.
 	 *
 	 * @param stack	Container item
 	 * @param smat	Material that is poured
@@ -30,24 +30,24 @@ public interface ISMatContainerItem
 	boolean canFillMaterial (ItemStack stack, SMatStack smat);
 
 	/**
-	 * Drain material from container.
+	 * Drain hasMaterial from container.
 	 *
 	 * @param stack		Container item
 	 * @param maxDrain	Request amount
 	 *
-	 * @return			Pumped out material
+	 * @return			Pumped out hasMaterial
 	 */
 	SMatStack drainMaterial (ItemStack stack, int maxDrain);
 
 	/**
-	 * Drain material from container.
+	 * Drain hasMaterial from container.
 	 * It is possible to specify the draft to container ID.
 	 *
 	 * @param stack		Container item
 	 * @param maxDrain	Request amount
 	 * @param container	Container ID
 	 *
-	 * @return			Pumped out material
+	 * @return			Pumped out hasMaterial
 	 */
 	SMatStack drainMaterial (ItemStack stack, int maxDrain, int container);
 

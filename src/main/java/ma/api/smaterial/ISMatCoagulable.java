@@ -9,7 +9,7 @@ package ma.api.smaterial;
 public interface ISMatCoagulable
 {
 	/**
-	 * Associate the SMaterial and OreDictionary-Name of material.<br>
+	 * Associate the SMaterial and OreDictionary-Name of hasMaterial.<br>
 	 *
 	 * @return	Material name.
 	 */

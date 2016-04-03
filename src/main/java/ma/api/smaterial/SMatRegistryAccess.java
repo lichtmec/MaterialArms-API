@@ -12,7 +12,7 @@ public final class SMatRegistryAccess
 	/**
 	 * Register SMaterial to registry.
 	 *
-	 * @param sMaterial	register material
+	 * @param sMaterial	register hasMaterial
 	 *
 	 * @return	If the registration is duplicated , return false.
 	 */
