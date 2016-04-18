@@ -1,4 +1,4 @@
-package ma.api.debug;
+package ma.api.util;
 
 import java.util.*;
 
@@ -7,13 +7,9 @@ import java.util.*;
  * <br>
  * Implement debug-info.<br>
  * In vanila MaterialArms, this is accessed by ItemTester.
- *
- * @deprecated "debug" package will be soon removed.
- * @see ma.api.util.IDebugInfo
  * 
  * @author	licht
  */
-@Deprecated
 public interface IDebugInfo
 {
 	/**

@@ -2,9 +2,12 @@ package ma.api.debug;
 
 /**
  * Utility for measuring the processing time.
+ *
+ * @deprecated "debug" package will be soon removed.
  * 
  * @author	licht
  */
+@Deprecated
 public class TimeCounter
 {
 	protected static long startTime_nano = 0;
