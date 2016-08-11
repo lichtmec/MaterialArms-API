@@ -19,7 +19,7 @@ public interface IMultiInjector extends IInventory, ISMatContainerTile
 	 *
 	 * @return	Injectable slot IDs (NonNull)
 	 */
-	int[] getSupplyingItem (ForgeDirection dir);
+	int[] getSupplyingItemSlot (ForgeDirection dir);
 
 	/**
 	 * For SMatStacks
@@ -28,5 +28,5 @@ public interface IMultiInjector extends IInventory, ISMatContainerTile
 	 *
 	 * @return	Injectable slot IDs (NonNull)
 	 */
-	int[] getSupplyingMaterial (ForgeDirection dir);
+	int[] getSupplyingMaterialSlot (ForgeDirection dir);
 }
