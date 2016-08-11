@@ -10,7 +10,7 @@ import java.util.*;
  * 
  * @author	licht
  */
-public interface IDebugInfo
+public interface IDebugInfo extends ma.api.debug.IDebugInfo
 {
 	/**
 	 * 
