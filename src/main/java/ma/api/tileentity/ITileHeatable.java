@@ -8,6 +8,7 @@ import net.minecraftforge.common.util.ForgeDirection;
  * 
  * @author	licht
  */
+@Deprecated
 public interface ITileHeatable
 {
 	/**

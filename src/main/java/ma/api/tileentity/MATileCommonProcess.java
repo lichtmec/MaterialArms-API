@@ -19,12 +19,14 @@ public class MATileCommonProcess
 	{
 		commonProcess.onUpdateContainer(tile);
 	}
-	
+
+	@Deprecated
 	public static void releaseHeatToBlock (ITileHeatable tile)
 	{
 		commonProcess.releaseHeatToBlock(tile);
 	}
-	
+
+	@Deprecated
 	public static void releaseHeatToAir (ITileHeatable tile)
 	{
 		commonProcess.releaseHeatToAir(tile);
@@ -32,7 +34,7 @@ public class MATileCommonProcess
 	
 	public interface ITileCommonProcess
 	{
-		float HEAT_CONDUCTION_RATE_AIR = 0.1F;
+		float HEAT_CONDUCTION_RATE_AIR = 0.02F;
 		
 		void onUpdateContainer (ISMatContainer tile);
 		
