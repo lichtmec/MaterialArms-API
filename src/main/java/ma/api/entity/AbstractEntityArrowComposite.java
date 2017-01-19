@@ -50,6 +50,8 @@ public abstract class AbstractEntityArrowComposite extends EntityArrow
 	@Override
 	protected void entityInit ()
 	{
+		super.entityInit();
+
 		// Add ItemStack object (Arrow stack info)
 		this.dataWatcher.addObjectByDataType(16, 5);
 	}
