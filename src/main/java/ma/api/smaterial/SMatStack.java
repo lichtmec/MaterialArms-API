@@ -4,8 +4,6 @@ import java.util.*;
 
 import net.minecraft.nbt.*;
 
-import javax.swing.text.StyleContext;
-
 /**
  * @see net.minecraft.item.ItemStack
  *
