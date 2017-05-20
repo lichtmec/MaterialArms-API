@@ -24,6 +24,8 @@ public class SMaterial
 	int meltingTemp = TEMP_UNDEFINED;
 	int boilingTemp = TEMP_UNDEFINED;
 	int plasmaTemp = TEMP_UNDEFINED;
+
+	private final List<String> correspondingFluidNameList = new ArrayList<>();
 	
 	public SMaterial ()
 	{
@@ -175,6 +177,24 @@ public class SMaterial
 		}
 		
 		return States.UNKNOWN;
+	}
+
+	public boolean addCorrespondingFluidName (String name)
+	{
+		boolean ret = false;
+
+		if (!this.correspondingFluidNameList.contains(name))
+		{
+			this.correspondingFluidNameList.add(name);
+			ret = true;
+		}
+
+		return ret;
+	}
+
+	public List<String> getCorrespondingFluidNameList ()
+	{
+		return this.correspondingFluidNameList;
 	}
 	
 	public enum States
