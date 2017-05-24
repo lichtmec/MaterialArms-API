@@ -344,6 +344,17 @@ public final class ToolModifyBusAccess
 		}
 
 		/**
+		 * Item#onEntitySwing
+		 *
+		 * @param player	arg.2
+		 * @param itemstack	arg.1
+		 */
+		public static void onItemSwing (EntityLivingBase player, ItemStack itemstack)
+		{
+			ENCHANT_BUS.onItemSwing(player, itemstack);
+		}
+
+		/**
 		 * It is automatically called when implement the IEnchantableItemMA.<br>
 		 * Normally, it is not necessary to call from the add-on side .
 		 */
@@ -425,6 +436,8 @@ public final class ToolModifyBusAccess
 		int getHarvestLevel (ItemStack itemstack, int defaultHL);
 
 		IModifiProperty.ResistProperty getResistProperty (EntityLivingBase player, ItemStack itemstack, DamageSource source, float damage);
+
+		void onItemSwing (EntityLivingBase player, ItemStack itemstack);
 
 		void onEntityLivingAttacked (ItemStack itemstack, LivingAttackEvent event);
 

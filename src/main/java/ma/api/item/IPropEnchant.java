@@ -32,6 +32,8 @@ public interface IPropEnchant extends IModifiProperty
 
 	float getManaCollectGain (ItemStack stack, int lv);
 
+	void onItemSwing (EResultContainer result, int lv, ItemStack itemstack, EntityLivingBase player);
+
 	void onEntityLivingAttacked (EResultContainer result, int lv, ItemStack itemstack, LivingAttackEvent event);
 
 	void onEntityLivingFall (EResultContainer result, int lv, ItemStack itemstack, LivingFallEvent event);
