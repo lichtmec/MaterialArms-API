@@ -115,8 +115,8 @@ public class SMaterial
 	
 	public void addInformation (SMatStack smat, List list)
 	{
-		list.add("Temp : " + smat.temp + "K");
-		list.add("State: " + getState(smat).toString());
+		list.add(StatCollector.translateToLocal("gui.smatcontainer.temp").replaceAll("&#", "") + ": " + smat.temp + "K");
+		list.add(StatCollector.translateToLocal("gui.smatcontainer.state").replaceAll("&#", "") + ": " + getState(smat).getUnlocalizeStateName());
 	}
 	
 	public void onTileUpdate (TileEntity tile, SMatStack smat)
@@ -216,6 +216,11 @@ public class SMaterial
 		public boolean isFluid ()
 		{
 			return this.isFluid;
+		}
+
+		public String getUnlocalizeStateName ()
+		{
+			return StatCollector.translateToLocal("statablematerial.state." + this.toString());
 		}
 	}
 }
