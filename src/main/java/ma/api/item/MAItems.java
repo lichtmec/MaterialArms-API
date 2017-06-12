@@ -55,6 +55,7 @@ public final class MAItems
  * 	  blockStorage			- Storages
  * 	  blockEUStorage		- EUStorage, RSGenerator
  * 	  blockMachine			- Many machines
+ * 	  blockConverter		- converters
  *
  * 	Items
  * 	  itemTester			- Debug item
