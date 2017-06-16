@@ -76,13 +76,22 @@ public abstract class AbstractEntityArrowComposite extends EntityArrow
 	@Override
 	public void readEntityFromNBT (NBTTagCompound nbt)
 	{
-		this.arrowStack = ItemStack.loadItemStackFromNBT(nbt.getCompoundTag("arrowStack"));
+		if (nbt.hasKey("arrowStack"))
+		{
+			this.arrowStack = ItemStack.loadItemStackFromNBT(nbt.getCompoundTag("arrowStack"));
+		}
+		else
+		{
+			this.arrowStack = null;
+		}
+
 		this.isCritical = nbt.getBoolean("isCrit");
 	}
 
 	@Override
 	public void writeEntityToNBT (NBTTagCompound nbt)
 	{
+		if (this.arrowStack != null)
 		{
 			NBTTagCompound stackNbt = new NBTTagCompound();
 			this.arrowStack.writeToNBT(stackNbt);
@@ -127,7 +136,7 @@ public abstract class AbstractEntityArrowComposite extends EntityArrow
 		this.isCritical = true;
 	}
 
-	public final boolean checkValidArrow ()
+	public boolean checkValidArrow ()
 	{
 		if (this.arrowStack == null || !(this.arrowStack.getItem() instanceof IArrowComposite) || !((IArrowComposite)this.arrowStack.getItem()).canUseToCompositeBow(this.arrowStack))
 		{
