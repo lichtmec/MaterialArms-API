@@ -1,4 +1,4 @@
-package ma.api.enchant;
+package ma.api.item.enchant;
 
 import net.minecraft.item.ItemStack;
 

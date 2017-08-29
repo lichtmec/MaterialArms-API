@@ -1,4 +1,4 @@
-package ma.api.enchant;
+package ma.api.item.enchant;
 
 import ma.api.item.ModConform;
 import ma.api.item.IPropEnchant;
