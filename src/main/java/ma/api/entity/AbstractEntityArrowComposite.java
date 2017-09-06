@@ -1,13 +1,16 @@
 package ma.api.entity;
 
 import ma.api.item.IArrowComposite;
+import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.IProjectile;
 import net.minecraft.entity.projectile.EntityArrow;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public abstract class AbstractEntityArrowComposite extends EntityArrow
 {
@@ -18,12 +21,16 @@ public abstract class AbstractEntityArrowComposite extends EntityArrow
 	public ItemStack arrowStack;
 	public boolean isCritical;
 
+	private List<ProjectileEnchantState> appliedEnchantList;
+
 	public AbstractEntityArrowComposite (World world)
 	{
 		super(world);
 
 		setSize(0.3F, 0.3F);
 		this.yOffset = 0F;
+
+		this.appliedEnchantList = new ArrayList<>();
 	}
 
 	public AbstractEntityArrowComposite (World world, Entity shooter, ItemStack bosStack, ItemStack arrowStack, float power)
@@ -144,5 +151,50 @@ public abstract class AbstractEntityArrowComposite extends EntityArrow
 		}
 
 		return true;
+	}
+
+	public void applyEnchantEffect (ProjectileEnchantState enchant)
+	{
+		if (enchant != null && !this.appliedEnchantList.contains(enchant))
+		{
+			this.appliedEnchantList.add(enchant);
+		}
+	}
+
+	public List<ProjectileEnchantState> getAppliedEnchantList ()
+	{
+		return this.appliedEnchantList;
+	}
+
+	public void onFire ()
+	{
+		for (ProjectileEnchantState enchantState : this.appliedEnchantList)
+		{
+			enchantState.enchantProp.onFire(enchantState, this);
+		}
+	}
+
+	public void onHitEntityBefore (Entity hitEntity, boolean willDead)
+	{
+		for (ProjectileEnchantState enchantState : this.appliedEnchantList)
+		{
+			enchantState.enchantProp.onHitBefore(enchantState, this, hitEntity, willDead);
+		}
+	}
+
+	public void onHitEntity (Entity hitEntity, boolean willDead)
+	{
+		for (ProjectileEnchantState enchantState : this.appliedEnchantList)
+		{
+			enchantState.enchantProp.onHit(enchantState, this, hitEntity, willDead);
+		}
+	}
+
+	public void onHitBlock (Block hitBlock, int xCoord, int yCoord, int zCoord, boolean willDead)
+	{
+		for (ProjectileEnchantState enchantState : this.appliedEnchantList)
+		{
+			enchantState.enchantProp.onHit(enchantState, this, hitBlock, xCoord, yCoord, zCoord, willDead);
+		}
 	}
 }
