@@ -26,6 +26,6 @@ public class EnchantState
 
 	public String toString (ItemStack stack)
 	{
-		return "Enchant/" + enchant.display + "  Lv." + lv;
+		return "Enchant/" + enchant.getDisplayName() + "  Lv." + lv;
 	}
 }

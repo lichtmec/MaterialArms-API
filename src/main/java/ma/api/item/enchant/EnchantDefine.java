@@ -3,6 +3,7 @@ package ma.api.item.enchant;
 import ma.api.item.ModConform;
 import ma.api.item.IPropEnchant;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.StatCollector;
 
 /**
  * MA-Enchant definication class.
@@ -13,17 +14,23 @@ public class EnchantDefine
 {
 	public IPropEnchant prop;
 	public ModConform modInfo;
-	public String display;
+	public String displayUnlocalized;
 
-	public EnchantDefine (ModConform modInfo, String display, IPropEnchant prop)
+	public EnchantDefine (ModConform modInfo, String displayUnlocalized, IPropEnchant prop)
 	{
 		this.prop = prop;
 		this.modInfo = modInfo;
-		this.display = display;
+		this.displayUnlocalized = displayUnlocalized;
 	}
 
-	public String toString (ItemStack stack)
+	public String getDisplayName ()
 	{
-		return "Enchant/" + display;
+		return StatCollector.translateToLocal(this.displayUnlocalized);
+	}
+
+	@Override
+	public String toString ()
+	{
+		return this.displayUnlocalized;
 	}
 }
