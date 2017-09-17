@@ -15,6 +15,7 @@ public final class SMatStack
 	public int amount;
 	public int temp;
 	public float compression;
+	public boolean isDust;
 	public NBTTagCompound nbt, nbt_ex;
 	
 	public SMatStack (SMaterial fluid, int amount)
@@ -33,6 +34,7 @@ public final class SMatStack
 		this.amount = amount;
 		this.temp = temp;
 		this.compression = compression;
+		this.isDust = false;
 	}
 	
 	public SMatStack (SMaterial material, int amount, NBTTagCompound nbt)
@@ -65,8 +67,10 @@ public final class SMatStack
 		String name = nbt.getString("smat.name");
 		int amount = nbt.getInteger("smat.amount");
 		int temp = nbt.getInteger("smat.temp");
+		boolean isDust = nbt.getBoolean("smat.bdust");
 		
-		SMatStack material = new SMatStack(SMatRegistryAccess.getMaterial(name), amount, temp);
+		SMatStack material = (new SMatStack(SMatRegistryAccess.getMaterial(name), amount, temp));
+		material.setIsDust(isDust);
 		
 		if (nbt.hasKey("smat.tag"))
 		{
@@ -83,6 +87,7 @@ public final class SMatStack
 		nbt.setString("smat.name", material.getMaterialName());
 		nbt.setInteger("smat.amount", this.amount);
 		nbt.setInteger("smat.temp", this.temp);
+		nbt.setBoolean("smat.bdust", this.isDust);
 		
 		if (this.nbt != null)
 		{
@@ -106,10 +111,17 @@ public final class SMatStack
 	{
 		return this.material.getUnlocalizedName();
 	}
+
+	public SMatStack setIsDust (boolean isDust)
+	{
+		this.isDust = isDust;
+
+		return this;
+	}
 	
 	public SMatStack copy ()
 	{
-		return new SMatStack(this.material, this.amount, this.nbt, this.temp);
+		return (new SMatStack(this.material, this.amount, this.nbt, this.temp)).setIsDust(this.isDust);
 	}
 	
 	public List getHoveringText ()
@@ -133,6 +145,7 @@ public final class SMatStack
 		if (smStack1 == null || smStack1.amount <= 0)	return smStack0;
 		
 		SMatStack ret = new SMatStack(null, smStack0.amount + smStack1.amount, 0);
+		ret.setIsDust(smStack0.isDust && smStack1.isDust);
 		
 		if (smStack0.getMaterial() != smStack1.getMaterial())
 		{

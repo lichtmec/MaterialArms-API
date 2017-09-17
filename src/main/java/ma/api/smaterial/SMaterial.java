@@ -121,6 +121,10 @@ public class SMaterial
 	
 	public void onTileUpdate (TileEntity tile, SMatStack smat)
 	{
+		if (smat.isDust && this.getState(smat) != States.DUST)
+		{
+			smat.setIsDust(false);
+		}
 	}
 	
 	public void readFromNBT (NBTTagCompound nbt, SMatStack smat)
@@ -153,7 +157,14 @@ public class SMaterial
 		{
 			if (this.meltingTemp * 0.8 > smat.temp)
 			{
-				return States.SOLID;
+				if (smat.isDust)
+				{
+					return States.DUST;
+				}
+				else
+				{
+					return States.SOLID;
+				}
 			}
 			else if (this.boilingTemp != TEMP_UNDEFINED)
 			{
