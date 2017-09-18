@@ -1,6 +1,7 @@
 package ma.api.smaterial;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 import net.minecraft.nbt.*;
 
@@ -143,21 +144,24 @@ public final class SMatStack
 	{
 		if (smStack0 == null || smStack0.amount <= 0)	return smStack1;
 		if (smStack1 == null || smStack1.amount <= 0)	return smStack0;
-		
-		SMatStack ret = new SMatStack(null, smStack0.amount + smStack1.amount, 0);
-		ret.setIsDust(smStack0.isDust && smStack1.isDust);
-		
+
+		SMaterial mixedMaterial;
 		if (smStack0.getMaterial() != smStack1.getMaterial())
 		{
-			ret.material = SMatRegistryAccess.getMaterial("_S-MATERIAL_");
+			mixedMaterial = SMatRegistryAccess.getMaterial("_S-MATERIAL_");
 		}
 		else
 		{
-			ret.material = smStack0.material;
+			mixedMaterial = smStack0.material;
 		}
-		
-		ret.temp = (smStack0.temp * smStack0.amount + smStack1.temp * smStack1.amount) / (smStack0.amount + smStack1.amount);
-		
+
+		int temp = (smStack0.temp * smStack0.amount + smStack1.temp * smStack1.amount) / (smStack0.amount + smStack1.amount);
+		float compression = (smStack0.amount * smStack0.compression + smStack1.amount * smStack1.compression) / (smStack0.amount + smStack1.amount);
+		int amount = Math.round((smStack0.amount * smStack0.compression + smStack1.amount * smStack1.compression) / compression);
+
+		SMatStack ret = new SMatStack(mixedMaterial, smStack0.amount + smStack1.amount, temp, compression);
+		ret.setIsDust(smStack0.isDust && smStack1.isDust);
+
 		return ret;
 	}
 }
