@@ -145,16 +145,7 @@ public final class SMatStack
 		if (smStack0 == null || smStack0.amount <= 0)	return smStack1;
 		if (smStack1 == null || smStack1.amount <= 0)	return smStack0;
 
-		SMaterial mixedMaterial;
-		if (smStack0.getMaterial() != smStack1.getMaterial())
-		{
-			mixedMaterial = SMatRegistryAccess.getMaterial("_S-MATERIAL_");
-		}
-		else
-		{
-			mixedMaterial = smStack0.material;
-		}
-
+		SMaterial mixedMaterial = smStack0.getMaterial().mixWith(smStack1.getMaterial());
 		int temp = (smStack0.temp * smStack0.amount + smStack1.temp * smStack1.amount) / (smStack0.amount + smStack1.amount);
 		float compression = (smStack0.amount * smStack0.compression + smStack1.amount * smStack1.compression) / (smStack0.amount + smStack1.amount);
 		int amount = Math.round((smStack0.amount * smStack0.compression + smStack1.amount * smStack1.compression) / compression);

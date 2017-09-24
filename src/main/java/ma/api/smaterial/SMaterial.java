@@ -207,6 +207,11 @@ public class SMaterial
 	{
 		return this.correspondingFluidNameList;
 	}
+
+	public SMaterial mixWith (SMaterial mixMaterial)
+	{
+		return (this == mixMaterial) ? this : SMatRegistryAccess.getMaterial("_S-MATERIAL_");
+	}
 	
 	public enum States
 	{
