@@ -68,9 +68,10 @@ public final class SMatStack
 		String name = nbt.getString("smat.name");
 		int amount = nbt.getInteger("smat.amount");
 		int temp = nbt.getInteger("smat.temp");
+		float compress = nbt.getFloat("smat.compress");
 		boolean isDust = nbt.getBoolean("smat.bdust");
 		
-		SMatStack material = (new SMatStack(SMatRegistryAccess.getMaterial(name), amount, temp));
+		SMatStack material = (new SMatStack(SMatRegistryAccess.getMaterial(name), amount, temp, compress));
 		material.setIsDust(isDust);
 		
 		if (nbt.hasKey("smat.tag"))
@@ -88,6 +89,7 @@ public final class SMatStack
 		nbt.setString("smat.name", material.getMaterialName());
 		nbt.setInteger("smat.amount", this.amount);
 		nbt.setInteger("smat.temp", this.temp);
+		nbt.setFloat("smat.compress", this.compression);
 		nbt.setBoolean("smat.bdust", this.isDust);
 		
 		if (this.nbt != null)
