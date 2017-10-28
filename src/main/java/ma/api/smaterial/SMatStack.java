@@ -144,8 +144,9 @@ public final class SMatStack
 	
 	public static SMatStack mix (SMatStack smStack0, SMatStack smStack1)
 	{
-		if (smStack0 == null || smStack0.amount <= 0)	return smStack1;
-		if (smStack1 == null || smStack1.amount <= 0)	return smStack0;
+		if (smStack0 == null && smStack1 == null)		return null;
+		if (smStack0 == null || smStack0.amount <= 0)	return smStack1.copy();
+		if (smStack1 == null || smStack1.amount <= 0)	return smStack0.copy();
 
 		SMaterial mixedMaterial = smStack0.getMaterial().mixWith(smStack1.getMaterial());
 		int temp = (smStack0.temp * smStack0.amount + smStack1.temp * smStack1.amount) / (smStack0.amount + smStack1.amount);
