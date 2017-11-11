@@ -47,6 +47,26 @@ public final class RecipeRegsiterAccess
 		register.addFusemeltRecipe(output, input, requiredTemp, requiredTime);
 	}
 
+	public static void addPulverizerRecipe (IRecipePulverizer recipe)
+	{
+		register.addPulverizerRecipe(recipe);
+	}
+
+	public static void addPulverizerRecipe (ItemStack input, byte category, int tierRequired, int timeRequired, ItemStack output, ItemStack subOutput, float subOutputChance)
+	{
+		register.addPulverizerRecipe(input, category, tierRequired, timeRequired, output, subOutput, subOutputChance);
+	}
+
+	public static void addCrusherRecipe (IRecipeCrusher recipe)
+	{
+		register.addCrusherRecipe(recipe);
+	}
+
+	public static void addCrusherRecipe (Object input, ItemStack output, int tierRequired, int timeRequired)
+	{
+		register.addCrusherRecipe(input, output, tierRequired, timeRequired);
+	}
+
 	public interface IRecipeRegister
 	{
 		void addMARecipe (IRecipeMA recipe);
@@ -58,5 +78,13 @@ public final class RecipeRegsiterAccess
 		void addFusemeltRecipe (IRecipeFusemelt recipe);
 
 		void addFusemeltRecipe (SMatStack output, Object[] input, int requiredTemp, int requiredTime);
+
+		void addPulverizerRecipe (IRecipePulverizer recipe);
+
+		void addPulverizerRecipe (ItemStack input, byte category, int tierRequired, int timeRequired, ItemStack output, ItemStack subOutput, float subOutputChance);
+
+		void addCrusherRecipe (IRecipeCrusher recipe);
+
+		void addCrusherRecipe (Object input, ItemStack output, int tierRequired, int timeRequired);
 	}
 }
