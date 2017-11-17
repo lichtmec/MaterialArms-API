@@ -47,6 +47,31 @@ public final class RecipeRegsiterAccess
 		register.addFusemeltRecipe(output, input, requiredTemp, requiredTime);
 	}
 
+	public static void registerPlateProcessorCategory (PlateProcessorCategory category)
+	{
+		register.registerPlateProcessorCategory(category);
+	}
+
+	public static void addPlateProcessorRecipeIngotToPlate (String materialName, int requiredTier, int requiredTime)
+	{
+		register.addPlateProcessorRecipeIngotToPlate(materialName, requiredTier, requiredTime);
+	}
+
+	public static void addPlateProcessorRecipePlateToDoubleplate (String materialName, int requiredTier, int requiredTime)
+	{
+		register.addPlateProcessorRecipePlateToDoubleplate(materialName, requiredTier, requiredTime);
+	}
+
+	public static void addPlateProcessorRecipeDoubleplateToSteadyplate (String materialName, int requiredTier, int requiredTime)
+	{
+		register.addPlateProcessorRecipeDoubleplateToSteadyplate(materialName, requiredTier, requiredTime);
+	}
+
+	public static void addPlateProcessorRecipePlateToSteadyplate (String materialName, int requiredTier, int requiredTime)
+	{
+		register.addPlateProcessorRecipePlateToSteadyplate(materialName, requiredTier, requiredTime);
+	}
+
 	public static void addPulverizerRecipe (IRecipePulverizer recipe)
 	{
 		register.addPulverizerRecipe(recipe);
@@ -78,6 +103,16 @@ public final class RecipeRegsiterAccess
 		void addFusemeltRecipe (IRecipeFusemelt recipe);
 
 		void addFusemeltRecipe (SMatStack output, Object[] input, int requiredTemp, int requiredTime);
+
+		void registerPlateProcessorCategory (PlateProcessorCategory category);
+
+		void addPlateProcessorRecipeIngotToPlate (String materialName, int requiredTier, int requiredTime);
+
+		void addPlateProcessorRecipePlateToDoubleplate (String materialName, int requiredTier, int requiredTime);
+
+		void addPlateProcessorRecipeDoubleplateToSteadyplate (String materialName, int requiredTier, int requiredTime);
+
+		void addPlateProcessorRecipePlateToSteadyplate (String materialName, int requiredTier, int requiredTime);
 
 		void addPulverizerRecipe (IRecipePulverizer recipe);
 
