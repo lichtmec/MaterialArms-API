@@ -2,6 +2,7 @@ package ma.api.recipe;
 
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.StatCollector;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,6 +45,11 @@ public abstract class PlateProcessorCategory
 		}
 
 		return ret;
+	}
+
+	public List<IRecipePlateProcessor> getRecipeList ()
+	{
+		return this.recipes;
 	}
 
 	public abstract ResourceLocation getGuiLabelLocation ();
