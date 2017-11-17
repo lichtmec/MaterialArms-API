@@ -2,7 +2,6 @@ package ma.api.recipe;
 
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.StatCollector;
 
 import java.util.ArrayList;
 import java.util.List;
