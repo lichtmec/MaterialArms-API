@@ -70,18 +70,27 @@ public final class SMatStack
 		int temp = nbt.getInteger("smat.temp");
 		float compress = nbt.getFloat("smat.compress");
 		boolean isDust = nbt.getBoolean("smat.bdust");
-		
-		SMatStack material = (new SMatStack(SMatRegistryAccess.getMaterial(name), amount, temp, compress));
-		material.setIsDust(isDust);
-		
-		if (nbt.hasKey("smat.tag"))
+
+		SMaterial material = SMatRegistryAccess.getMaterial(name);
+		SMatStack materialStack;
+		if (material != null)
 		{
-			material.nbt = nbt.getCompoundTag("smat.tag");
+			materialStack = (new SMatStack(material, amount, temp, compress));
+			materialStack.setIsDust(isDust);
+
+			if (nbt.hasKey("smat.tag"))
+			{
+				materialStack.nbt = nbt.getCompoundTag("smat.tag");
+			}
+
+			materialStack.material.readFromNBT(materialStack.nbt_ex, materialStack);
+		}
+		else
+		{
+			materialStack = null;
 		}
 		
-		material.material.readFromNBT(material.nbt_ex, material);
-		
-		return material;
+		return materialStack;
 	}
 	
 	public void writeToNBT (NBTTagCompound nbt)
