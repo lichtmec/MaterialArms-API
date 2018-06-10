@@ -124,6 +124,16 @@ public final class SMatStack
 		return this.material.getUnlocalizedName();
 	}
 
+	public SMatStack setTemperature (int temp)
+	{
+		if (temp >= 0)
+		{
+			this.temp = temp;
+		}
+
+		return this;
+	}
+
 	public SMatStack setIsDust (boolean isDust)
 	{
 		this.isDust = isDust;
