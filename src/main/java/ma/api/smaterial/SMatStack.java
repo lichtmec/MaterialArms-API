@@ -134,6 +134,16 @@ public final class SMatStack
 		return this;
 	}
 
+	public SMatStack setCompression (float compression)
+	{
+		if (compression > 0F)
+		{
+			this.compression = compression;
+		}
+
+		return this;
+	}
+
 	public SMatStack setIsDust (boolean isDust)
 	{
 		this.isDust = isDust;
@@ -143,7 +153,7 @@ public final class SMatStack
 	
 	public SMatStack copy ()
 	{
-		return (new SMatStack(this.material, this.amount, this.nbt, this.temp)).setIsDust(this.isDust);
+		return (new SMatStack(this.material, this.amount, this.nbt, this.temp)).setCompression(this.compression).setIsDust(this.isDust);
 	}
 	
 	public List getHoveringText ()
