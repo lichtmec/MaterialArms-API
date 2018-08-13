@@ -1,6 +1,7 @@
 package ma.api.recipe;
 
 import ma.api.smaterial.SMatStack;
+import ma.api.smaterial.SMaterial;
 import net.minecraft.item.ItemStack;
 import ma.api.recipe.Technology.UnderlyingTechnology;
 
@@ -92,6 +93,31 @@ public final class RecipeRegsiterAccess
 		register.addCrusherRecipe(input, output, tierRequired, timeRequired);
 	}
 
+	public static void addElectrolyzerRecipe (IRecipeElectrolyzer recipe)
+	{
+		register.addElectrolyzerRecipe(recipe);
+	}
+
+	public static void addElectrolyzerRecipe (SMaterial input, int inputAmount, SMatStack output1, SMatStack output2, SMaterial.States inputState, int requiredTier, int requiredTime, int sampleTemp)
+	{
+		register.addElectrolyzerRecipe(input, inputAmount, output1, output2, inputState, requiredTier, requiredTime, sampleTemp);
+	}
+
+	public static void addCircuitAssemblerRecipe (IRecipeCircuitAssembler recipe)
+	{
+		register.addCircuitAssemblerRecipe(recipe);
+	}
+
+	public static void addCircuitAssemblerRecipe (Object[] inputs, int inputRedstoneAmount, ItemStack output, int requiredTime)
+	{
+		register.addCircuitAssemblerRecipe(inputs, inputRedstoneAmount, output, requiredTime);
+	}
+
+	public static void addDistillationRecipe (IRecipeDistillation recipe)
+	{
+		register.addDistillationRecipe(recipe);
+	}
+
 	public interface IRecipeRegister
 	{
 		void addMARecipe (IRecipeMA recipe);
@@ -121,5 +147,15 @@ public final class RecipeRegsiterAccess
 		void addCrusherRecipe (IRecipeCrusher recipe);
 
 		void addCrusherRecipe (Object input, ItemStack output, int tierRequired, int timeRequired);
+
+		void addElectrolyzerRecipe (IRecipeElectrolyzer recipe);
+
+		void addElectrolyzerRecipe (SMaterial input, int inputAmount, SMatStack output1, SMatStack output2, SMaterial.States inputState, int requiredTier, int requiredTime, int sampleTemp);
+
+		void addCircuitAssemblerRecipe (IRecipeCircuitAssembler recipe);
+
+		void addCircuitAssemblerRecipe (Object[] inputs, int inputRedstoneAmount, ItemStack output, int requiredTime);
+
+		void addDistillationRecipe (IRecipeDistillation recipe);
 	}
 }
