@@ -11,8 +11,8 @@ import org.apache.logging.log4j.Logger;
 public final class MaterialArmsAPI
 {
 	private static final int API_VER_MAJOR = 1;
-	private static final int API_VER_MINOR = 0;
-	private static final int API_VER_BUILD = 7;
+	private static final int API_VER_MINOR = 1;
+	private static final int API_VER_BUILD = 0;
 
 	public static final String API_VER = API_VER_MAJOR + "." + API_VER_MINOR + "." + API_VER_BUILD;
 
