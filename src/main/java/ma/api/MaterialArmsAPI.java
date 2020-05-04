@@ -12,7 +12,7 @@ public final class MaterialArmsAPI
 {
 	private static final int API_VER_MAJOR = 1;
 	private static final int API_VER_MINOR = 1;
-	private static final int API_VER_BUILD = 1;
+	private static final int API_VER_BUILD = 2;
 
 	public static final String API_VER = API_VER_MAJOR + "." + API_VER_MINOR + "." + API_VER_BUILD;
 
