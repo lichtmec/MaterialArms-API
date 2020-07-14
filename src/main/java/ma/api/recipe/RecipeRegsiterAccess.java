@@ -1,6 +1,7 @@
 package ma.api.recipe;
 
 import ma.api.recipe.dynamic.IDynamicRecipeCrusher;
+import ma.api.recipe.dynamic.IDynamicRecipePulverizer;
 import ma.api.smaterial.SMatStack;
 import ma.api.smaterial.SMaterial;
 import net.minecraft.item.ItemStack;
@@ -118,6 +119,11 @@ public final class RecipeRegsiterAccess
 	{
 		register.addDistillationRecipe(recipe);
 	}
+
+	public static void registerPulverizerDynamicRecipe (IDynamicRecipePulverizer dynamicRecipe)
+	{
+		register.registerPulverizerDynamicRecipe(dynamicRecipe);
+	}
 	
 	public static void registerCrusherDynamicRecipe (IDynamicRecipeCrusher dynamicRecipe)
 	{
@@ -163,7 +169,9 @@ public final class RecipeRegsiterAccess
 		void addCircuitAssemblerRecipe (Object[] inputs, int inputRedstoneAmount, ItemStack output, int requiredTime);
 
 		void addDistillationRecipe (IRecipeDistillation recipe);
-		
+
+		void registerPulverizerDynamicRecipe (IDynamicRecipePulverizer dynamicRecipe);
+
 		void registerCrusherDynamicRecipe (IDynamicRecipeCrusher dynamicRecipe);
 	}
 }
