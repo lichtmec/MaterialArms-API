@@ -56,4 +56,27 @@ public abstract class PlateProcessorCategory
 	public abstract int getGuiLabelSrcX ();
 
 	public abstract int getGuiLabelSrcY ();
+
+	/**
+	 * Names of processor category implemented as standard in MaterialArms.
+	 */
+	public enum CategoryMA
+	{
+		INGOT_TO_PLATE("materialarms:IngotToPlate"),
+		PLATE_TO_DPLATE("materialarms:PlateToDPlate"),
+		DPLATE_TO_SPLATE("materialarms:DPlateToSPlate"),
+		PLATE_TO_SPLATE("materialarms:PlateToSPlate");
+
+		private final String uniqueName;
+
+		CategoryMA (String uniqueName)
+		{
+			this.uniqueName = uniqueName;
+		}
+
+		public String getUniqueName ()
+		{
+			return this.uniqueName;
+		}
+	}
 }
