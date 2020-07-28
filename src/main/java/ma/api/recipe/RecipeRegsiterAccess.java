@@ -1,6 +1,7 @@
 package ma.api.recipe;
 
 import ma.api.recipe.dynamic.IDynamicRecipeCrusher;
+import ma.api.recipe.dynamic.IDynamicRecipePlateProcessor;
 import ma.api.recipe.dynamic.IDynamicRecipePulverizer;
 import ma.api.smaterial.SMatStack;
 import ma.api.smaterial.SMaterial;
@@ -120,6 +121,11 @@ public final class RecipeRegsiterAccess
 		register.addDistillationRecipe(recipe);
 	}
 
+	public static void registerPlateProcessorDynamicRecipe (IDynamicRecipePlateProcessor dynamicRecipe)
+	{
+		register.registerPlateProcessorDynamicRecipe(dynamicRecipe);
+	}
+
 	public static void registerPulverizerDynamicRecipe (IDynamicRecipePulverizer dynamicRecipe)
 	{
 		register.registerPulverizerDynamicRecipe(dynamicRecipe);
@@ -169,6 +175,8 @@ public final class RecipeRegsiterAccess
 		void addCircuitAssemblerRecipe (Object[] inputs, int inputRedstoneAmount, ItemStack output, int requiredTime);
 
 		void addDistillationRecipe (IRecipeDistillation recipe);
+
+		void registerPlateProcessorDynamicRecipe (IDynamicRecipePlateProcessor dynamicRecipe);
 
 		void registerPulverizerDynamicRecipe (IDynamicRecipePulverizer dynamicRecipe);
 
